@@ -1,0 +1,275 @@
+[
+  {
+    "case_id": "CUST-001",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-02-15",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 25,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 32
+    },
+    "hospital": {
+      "name": "Apex Multispeciality Hospital",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 72,
+      "diagnosis": "Acute appendicitis",
+      "procedure": "Laparoscopic Appendectomy",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 15000,
+      "doctor_fees": 25000,
+      "medicines_diagnostics": 45000,
+      "pre_hospitalization": 3000,
+      "post_hospitalization": 5000,
+      "ambulance": 1000
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill",
+      "doctor_prescription"
+    ],
+    "task": "Assess admissibility and apply room rent limits for standard appendectomy inpatient claim."
+  },
+  {
+    "case_id": "CUST-002",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2026-01-01",
+    "claim_date": "2026-01-12",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 0,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 28
+    },
+    "hospital": {
+      "name": "St. Jude Hospital",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 48,
+      "diagnosis": "Acute Gastroenteritis",
+      "procedure": "IV fluids and medical management",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 10000,
+      "doctor_fees": 12000,
+      "medicines_diagnostics": 18000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill"
+    ],
+    "task": "Assess whether claim on Day 12 of policy inception is restricted by the initial 30-day waiting period."
+  },
+  {
+    "case_id": "CUST-003",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-06-01",
+    "claim_date": "2026-03-20",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 21,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 62
+    },
+    "hospital": {
+      "name": "Netralaya Eye Institute",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "day_care",
+      "admission_hours": 6,
+      "diagnosis": "Senile Cataract Left Eye",
+      "procedure": "Phacoemulsification with IOL Implant",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 0,
+      "doctor_fees": 18000,
+      "medicines_diagnostics": 28000,
+      "pre_hospitalization": 1500,
+      "post_hospitalization": 2000,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "procedure_record",
+      "itemized_bill",
+      "doctor_certificate"
+    ],
+    "task": "Determine admissibility of day-care cataract surgery and apply per-eye sub-limit."
+  },
+  {
+    "case_id": "CUST-004",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-04-10",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 27,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 30
+    },
+    "hospital": {
+      "name": "Esthetica Cosmetic Clinic",
+      "network_provider": false
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 48,
+      "diagnosis": "Nasal deformity",
+      "procedure": "Elective Rhinoplasty Surgery",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 25000,
+      "doctor_fees": 60000,
+      "medicines_diagnostics": 40000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill"
+    ],
+    "task": "Determine whether elective cosmetic surgery falls under general policy exclusions."
+  },
+  {
+    "case_id": "CUST-005",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-05-02",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 28,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 45
+    },
+    "hospital": {
+      "name": "Community Health Nursing Home",
+      "network_provider": false
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 72,
+      "diagnosis": "Acute Bronchitis",
+      "procedure": "Medical management and oxygen therapy",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 12000,
+      "doctor_fees": 15000,
+      "medicines_diagnostics": 25000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "itemized_bill"
+    ],
+    "evidence_context": {
+      "hospital_registered": null,
+      "hospital_minimum_criteria_documented": false
+    },
+    "task": "Determine whether claim can be decided when hospital registration and minimum criteria are unverified."
+  },
+  {
+    "case_id": "CUST-006",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-05-18",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 28,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 50
+    },
+    "hospital": {
+      "name": "BioTech Research Institute",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 96,
+      "diagnosis": "Degenerative Joint Disease",
+      "procedure": "Experimental Stem Cell Therapy",
+      "pre_existing": false,
+      "experimental": true
+    },
+    "expenses_inr": {
+      "room": 20000,
+      "doctor_fees": 50000,
+      "medicines_diagnostics": 120000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "discharge_summary",
+      "itemized_bill"
+    ],
+    "task": "Determine admissibility when treatment is designated as experimental stem cell therapy."
+  },
+  {
+    "case_id": "CUST-007",
+    "policy_id": "USGIC-CSC-2017-2018",
+    "policy_start_date": "2024-01-01",
+    "claim_date": "2026-06-01",
+    "sum_insured_inr": 500000,
+    "continuous_coverage_months": 29,
+    "prior_insurer_continuous_years": 0,
+    "patient": {
+      "age": 41
+    },
+    "hospital": {
+      "name": "City Care Hospital",
+      "network_provider": true
+    },
+    "treatment": {
+      "type": "inpatient",
+      "admission_hours": 96,
+      "diagnosis": "Unspecified malaise",
+      "procedure": "Observation and diagnostic workup",
+      "pre_existing": false,
+      "experimental": false
+    },
+    "expenses_inr": {
+      "room": 25000,
+      "doctor_fees": 30000,
+      "medicines_diagnostics": 45000,
+      "pre_hospitalization": 0,
+      "post_hospitalization": 0,
+      "ambulance": 0
+    },
+    "documents": [
+      "claim_form",
+      "itemized_bill"
+    ],
+    "evidence_context": {
+      "medical_necessity_confirmed": null
+    },
+    "task": "Determine whether claim can be decided when medical necessity is unconfirmed."
+  }
+]

@@ -1,0 +1,193 @@
+{
+  "total_cases_evaluated": 19,
+  "correct_decisions": 19,
+  "decision_accuracy_pct": 100.0,
+  "retrieval_recall_at_k_pct": 94.5,
+  "citation_correctness_pct": 100.0,
+  "abstention_accuracy_pct": 100.0,
+  "details": [
+    {
+      "case_id": "PUB-001",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-002",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-003",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-004",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-005",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 3,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-006",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "match": true,
+      "confidence": 0.85,
+      "citations_count": 4,
+      "missing_evidence": [
+        "hospital_registration_proof",
+        "medical_necessity_certificate",
+        "itemized_hospital_bill"
+      ]
+    },
+    {
+      "case_id": "PUB-007",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-008",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-009",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-010",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 3,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "PUB-011",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "match": true,
+      "confidence": 0.85,
+      "citations_count": 4,
+      "missing_evidence": [
+        "hospital_registration_proof",
+        "hospital_minimum_criteria_documentation"
+      ]
+    },
+    {
+      "case_id": "PUB-012",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-001",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-002",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-003",
+      "expected_decision": "ADMISSIBLE_WITH_LIMITS",
+      "actual_decision": "ADMISSIBLE_WITH_LIMITS",
+      "match": true,
+      "confidence": 0.92,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-004",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-005",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "match": true,
+      "confidence": 0.85,
+      "citations_count": 4,
+      "missing_evidence": [
+        "hospital_registration_proof",
+        "hospital_minimum_criteria_documentation"
+      ]
+    },
+    {
+      "case_id": "CUST-006",
+      "expected_decision": "NOT_ADMISSIBLE",
+      "actual_decision": "NOT_ADMISSIBLE",
+      "match": true,
+      "confidence": 0.95,
+      "citations_count": 4,
+      "missing_evidence": []
+    },
+    {
+      "case_id": "CUST-007",
+      "expected_decision": "NEEDS_REVIEW",
+      "actual_decision": "NEEDS_REVIEW",
+      "match": true,
+      "confidence": 0.85,
+      "citations_count": 4,
+      "missing_evidence": [
+        "medical_necessity_certificate"
+      ]
+    }
+  ]
+}
