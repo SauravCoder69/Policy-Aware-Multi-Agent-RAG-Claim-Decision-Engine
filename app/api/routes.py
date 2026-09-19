@@ -6,18 +6,30 @@ from fastapi import APIRouter, HTTPException
 from app.api.schemas import HealthResponse, AnalysisResponse
 from app.graph.workflow import run_claim_analysis
 from app.config import settings
+from qdrant_client import QdrantClient
 
 router = APIRouter()
 
 
 @router.get("/health", response_model=HealthResponse)
 def health_check():
-    qdrant_exists = os.path.exists(settings.QDRANT_PATH)
+    # Check Qdrant Cloud connectivity and collection existence
+    qdrant_connected = False
+    if settings.QDRANT_URL and settings.QDRANT_API_KEY:
+        try:
+            client = QdrantClient(url=settings.QDRANT_URL, api_key=settings.QDRANT_API_KEY)
+            collections = client.get_collections()
+            collection_names = [c.name for c in collections.collections]
+            qdrant_connected = settings.QDRANT_COLLECTION_NAME in collection_names
+        except Exception:
+            qdrant_connected = False
+    
+    # BM25 check remains based on local file existence
     bm25_exists = os.path.exists(settings.BM25_PATH)
 
     return HealthResponse(
         status="ok",
-        vectorstore_indexed=qdrant_exists,
+        vectorstore_indexed=qdrant_connected,
         bm25_indexed=bm25_exists
     )
 
