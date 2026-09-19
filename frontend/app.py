@@ -1,19 +1,10 @@
-"""Streamlit Frontend Application.
-
-Interactive reviewer dashboard for health insurance claim evaluation, displaying
-evidence-backed decision badges, findings, sub-limits, citations, validation audit, and trace logs.
-"""
-
-import sys
 import os
 import json
 import streamlit as st
+import requests
 
-# Add project root to sys.path
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
-from app.graph.workflow import run_claim_analysis
-from app.config import settings
+# Backend API URL
+BACKEND_URL = "http://127.0.0.1:8000"
 
 st.set_page_config(
     page_title="Aptino Health Claim Analyzer",
@@ -28,12 +19,15 @@ st.markdown("Evidence-backed automated health claim decision system powered by *
 @st.cache_data
 def load_all_test_cases():
     cases = {}
-    if os.path.exists(settings.PUBLIC_CASES_PATH):
-        with open(settings.PUBLIC_CASES_PATH, "r", encoding="utf-8") as f:
+    public_path = os.path.join(os.path.dirname(__file__), "..", "data", "public_cases", "public_test_cases.json")
+    custom_path = os.path.join(os.path.dirname(__file__), "..", "data", "custom_cases", "custom_test_cases.json")
+    
+    if os.path.exists(public_path):
+        with open(public_path, "r", encoding="utf-8") as f:
             for c in json.load(f):
                 cases[f"Public: {c['case_id']} - {c['treatment'].get('diagnosis', 'Claim')}"] = c
-    if os.path.exists(settings.CUSTOM_CASES_PATH):
-        with open(settings.CUSTOM_CASES_PATH, "r", encoding="utf-8") as f:
+    if os.path.exists(custom_path):
+        with open(custom_path, "r", encoding="utf-8") as f:
             for c in json.load(f):
                 cases[f"Custom: {c['case_id']} - {c['treatment'].get('diagnosis', 'Claim')}"] = c
     return cases
@@ -68,7 +62,27 @@ if analyze_btn:
         st.stop()
 
     with st.spinner("Executing 5-Agent LangGraph Analysis Workflow..."):
-        result = run_claim_analysis(claim_data)
+        try:
+            response = requests.post(
+                f"{BACKEND_URL}/analyze",
+                json=claim_data,
+                timeout=300,
+                headers={"Content-Type": "application/json"}
+            )
+            response.raise_for_status()
+            result = response.json()
+        except requests.exceptions.Timeout:
+            st.error("Backend request timed out. Please try again.")
+            st.stop()
+        except requests.exceptions.ConnectionError:
+            st.error("Could not connect to backend. Please check if the backend is running.")
+            st.stop()
+        except requests.exceptions.HTTPError as e:
+            st.error(f"Backend returned an error: {e.response.status_code} - {e.response.text}")
+            st.stop()
+        except Exception as e:
+            st.error(f"An error occurred while analyzing the claim: {str(e)}")
+            st.stop()
 
     st.markdown("---")
     st.subheader("📊 Analysis Decision & Audit Result")

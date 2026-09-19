@@ -2,6 +2,24 @@
 
 An evidence-backed health insurance claim decisioning system using **RAG**, **Hybrid Retrieval**, **Reranking**, and a **5-Agent LangGraph Workflow**.
 
+### Urgent
+
+## Deployment Status
+
+The FastAPI backend was deployed to Render successfully and the service starts correctly. However, the `/analyze` endpoint is not reliably available on the free deployment environment because the multi-agent RAG analysis is a long-running operation and the request times out.
+
+The complete application is reproducible locally, with Qdrant Cloud used as the hosted vector database.
+
+For local execution:
+
+```bash
+python -m uvicorn app.main:app --reload
+python -m streamlit run frontend/app.py
+```
+
+The local end-to-end evaluation successfully achieved 19/19 correct cases (100%).
+
+
 ---
 
 ## 🌟 Features
