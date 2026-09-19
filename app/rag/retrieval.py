@@ -8,7 +8,6 @@ import os
 import pickle
 import re
 from typing import List, Dict, Any
-from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 
 from app.config import settings
@@ -27,6 +26,7 @@ class HybridRetriever:
 
     def _lazy_init(self):
         if self.embedding_model is None:
+            from sentence_transformers import SentenceTransformer
             self.embedding_model = SentenceTransformer(settings.EMBEDDING_MODEL)
 
         if self.qdrant_client is None:

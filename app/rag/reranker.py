@@ -5,7 +5,6 @@ with a robust cosine similarity fallback.
 """
 
 from typing import List, Dict, Any
-from sentence_transformers import SentenceTransformer, util
 from app.config import settings
 
 _cross_encoder = None
@@ -19,8 +18,10 @@ def get_reranker_scores(query: str, docs: List[str]) -> List[float]:
     # Fast similarity scoring via embedding model as primary reliable ranker
     try:
         if _embedding_model is None:
+            from sentence_transformers import SentenceTransformer, util
             _embedding_model = SentenceTransformer(settings.EMBEDDING_MODEL)
         
+        from sentence_transformers import util
         q_emb = _embedding_model.encode(query, convert_to_tensor=True)
         doc_embs = _embedding_model.encode(docs, convert_to_tensor=True)
         scores = util.cos_sim(q_emb, doc_embs)[0].tolist()
