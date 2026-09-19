@@ -97,6 +97,14 @@ def run_decision_agent(state: ClaimState) -> ClaimState:
             "finding": f.get("finding"),
             "evidence_refs": f.get("evidence_refs", [])
         })
+    
+    # Add applicable limits as findings for display in Coverage & Policy Findings
+    for limit in applicable_limits:
+        key_findings.append({
+            "dimension": limit.get("category", "sub_limit"),
+            "finding": limit.get("description", ""),
+            "evidence_refs": limit.get("evidence_refs", [])
+        })
 
     decision_dict = {
         "case_id": case_id,

@@ -4,7 +4,7 @@ import streamlit as st
 import requests
 
 # Backend API URL
-BACKEND_URL = "http://127.0.0.1:8000"
+BACKEND_URL = "https://policy-aware-multi-agent-rag-claim-51ec.onrender.com"
 
 st.set_page_config(
     page_title="Aptino Health Claim Analyzer",
